@@ -14,7 +14,6 @@ repos:
     args: ['--unsafe']  # needed for !! tags in mkdocs.yml
   - id: debug-statements
   - id: end-of-file-fixer
-  - id: requirements-txt-fixer
   - id: mixed-line-ending
     args: ['--fix=auto']  # replace 'auto' with 'lf' to enforce Linux/Mac line endings or 'crlf' for Windows
 
