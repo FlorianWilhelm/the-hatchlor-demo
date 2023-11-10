@@ -11,10 +11,8 @@ name = "python-hatch-project"
 description = "Python project featuring the modern and extensible Python project manager hatch."
 readme = "README.md"
 requires-python = ">=3.10"
-
 # only license identifier from https://spdx.org/licenses/ allowed
 license = "MIT"
-
 license-files = { paths = ["LICENSE.txt"] }
 
 # keywords for easier look-up on PyPI
