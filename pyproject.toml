@@ -11,8 +11,12 @@ name = "python-hatch-project"
 description = "Python project featuring the modern and extensible Python project manager hatch."
 readme = "README.md"
 requires-python = ">=3.10"
-# use license identifier from https://spdx.org/licenses/
+
+# only license identifier from https://spdx.org/licenses/ allowed
 license = "MIT"
+
+license-files = { paths = ["LICENSE.txt"] }
+
 # keywords for easier look-up on PyPI
 keywords = ["keyword_1", "keyword_2"] # ToDo: Modify according to your needs!
 authors = [
@@ -180,7 +184,7 @@ unfixable = [
 ]
 
 [tool.ruff.format]
-quote-style = 'single' # be more like black
+quote-style = "single" # be more like black
 
 [tool.ruff.isort]
 known-first-party = ["python_hatch_project"]
