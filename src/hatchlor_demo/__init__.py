@@ -6,7 +6,7 @@ Notion-API: https://developers.notion.com/reference/intro
 from importlib.metadata import PackageNotFoundError, version
 
 try:
-    __version__ = version('python-hatch-project')
+    __version__ = version('hatchlor-demo')
 except PackageNotFoundError:  # pragma: no cover
     __version__ = 'unknown'
 finally:
