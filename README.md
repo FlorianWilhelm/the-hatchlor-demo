@@ -28,6 +28,9 @@ respectively. Use `hatch run lint:all` to run all kinds of typing and linting ch
 problems with `hatch run lint:fix` and use `hatch run docs:serve` to build and serve your documentation.
 You can also easily define your own environments and commands. Check out the environment setup of hatch
 in [pyproject.toml](pyproject.toml) for more commands as well as the package, build and tool configuration.
+The environments defined by hatch are configured to generate lock files using [hatch-pip-compile] under `locks`.
+To upgrade all packages in an environment like `test`, just run `hatch run test:upgrade-all`. To upgrade specific
+packages, type `hatch run test:upgrade-pkg pkg1,pkg2`.
 
 ## Credits
 
@@ -37,3 +40,4 @@ This package was created with [The Hatchlor] project template.
 [pipx]: https://pypa.github.io/pipx/
 [hatch]: https://hatch.pypa.io/
 [pre-commit]: https://pre-commit.com/
+[hatch-pip-compile]: https://github.com/juftin/hatch-pip-compile
