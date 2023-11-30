@@ -1,6 +1,6 @@
-# ​Hatchlor demo project
+# ​Python hatch project
 
-Python project featuring the Python project manager hatch powerd by the Hatchlor.
+Python project featuring the modern and extensible Python project manager hatch.
 
 ## Navigation
 

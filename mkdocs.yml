@@ -1,13 +1,13 @@
 # Project information
-site_name: Hatchlor demo project
-site_description: Python project featuring the Python project manager hatch powerd by the Hatchlor.
-site_author: Harro Hatchlor
-site_url: https://github.com/FlorianWilhelm/the-hatchlor-demo
-copyright: 'Copyright &copy; Harro Hatchlor 2023-present'
+site_name: Python hatch project
+site_description: Python project featuring the modern and extensible Python project manager hatch.
+site_author: Florian Wilhelm
+site_url: https://github.com/FlorianWilhelm/python-hatch-project
+copyright: 'Copyright &copy; Florian Wilhelm 2023-present'
 
 # Repository
-repo_name: hatchlor-demo
-repo_url: https://github.com/FlorianWilhelm/the-hatchlor-demo
+repo_name: python-hatch-project
+repo_url: https://github.com/FlorianWilhelm/python-hatch-project
 edit_uri: blob/master/docs
 
 # Navigation
@@ -19,7 +19,7 @@ nav:
     - Authors: authors.md
     - Contributing: contributing.md
   # defer to gen-files + literate-nav
-  - Reference: reference/hatchlor_demo/
+  - Reference: reference/python_hatch_project/
 
 # Configuration
 docs_dir: docs
@@ -57,7 +57,7 @@ theme:
     - navigation.instant
 
 watch:
-- src/hatchlor_demo
+- src/python_hatch_project
 
 # Extensions
 plugins:
@@ -158,7 +158,7 @@ extra:
     provider: mike
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/FlorianWilhelm/the-hatchlor-demo
+      link: https://github.com/FlorianWilhelm/python-hatch-project
   #  - icon: fontawesome/solid/blog
   #    link: https://....
   #  - icon: fontawesome/brands/linkedin

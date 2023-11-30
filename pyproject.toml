@@ -7,18 +7,18 @@ build-backend = "hatchling.build"
 ####################
 
 [project]
-name = "hatchlor-demo"
-description = "Python project featuring the Python project manager hatch powerd by the Hatchlor."
+name = "python-hatch-project"
+description = "Python project featuring the modern and extensible Python project manager hatch."
 readme = "README.md"
 requires-python = ">=3.10"
-# only license identifier from https://spdx.org/licenses/ are allowed
+# only license identifier from https://spdx.org/licenses/ allowed
 license = "MIT"
 license-files = { paths = ["LICENSE.txt"] }
 
 # keywords for easier look-up on PyPI
 keywords = ["keyword_1", "keyword_2"] # ToDo: Modify according to your needs!
 authors = [
-    { name = "Harro Hatchlor", email = "harro@hatchlor.com" },
+    { name = "Florian Wilhelm", email = "email@example.com" },
 ]
 # options under https://pypi.org/classifiers/
 classifiers = [ # ToDo: Modify according to your needs!
@@ -28,7 +28,7 @@ classifiers = [ # ToDo: Modify according to your needs!
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: Implementation :: CPython",
 ]
-# direct dependencies of this package, installed when users `pip install hatchlor-demo` later.
+# direct dependencies of this package, installed when users `pip install python-hatch-project` later.
 dependencies = [ # ToDo: Modify according to your needs!
     "typer",
     # "numpy",
@@ -39,15 +39,15 @@ dynamic = ["version"]
 
 [project.scripts]
 # Use `fibonacci` as command-line script, comment or remove this section if not needed.
-fibonacci = "hatchlor_demo.skeleton:app"
+fibonacci = "python_hatch_project.skeleton:app"
 
 [project.urls]
 # important URLs for this project
 # ToDo: Modify according to your needs!
-Documentation = "https://github.com/FlorianWilhelm/the-hatchlor-demo"
-Source = "https://github.com/FlorianWilhelm/the-hatchlor-demo"
-# Tracker = "https://github.com/FlorianWilhelm/the-hatchlor-demo/issues"
-# Sponsor = "https://github.com/sponsors/hatchlor"
+Documentation = "https://github.com/FlorianWilhelm/python-hatch-project"
+Source = "https://github.com/FlorianWilhelm/python-hatch-project"
+# Tracker = "https://github.com/FlorianWilhelm/python-hatch-project/issues"
+# Sponsor = "https://github.com/sponsors/FlorianWilhelm"
 
 ######################
 # Build & Versioning #
@@ -62,10 +62,10 @@ source = "vcs"
 raw-options = { version_scheme = "no-guess-dev" }
 
 [tool.hatch.build.hooks.vcs]
-version-file = "src/hatchlor_demo/_version.py"
+version-file = "src/python_hatch_project/_version.py"
 
 [tool.hatch.build]
-packages = ["src/hatchlor_demo"]
+packages = ["src/python_hatch_project"]
 
 [tool.hatch.build.targets.sdist]
 exclude = [
@@ -77,7 +77,7 @@ exclude = [
 ##################
 
 [tool.mypy]
-files = ["src/hatchlor_demo", "tests"]
+files = ["src/python_hatch_project", "tests"]
 disallow_untyped_defs = false
 follow_imports = "normal" # "silent" for not following
 ignore_missing_imports = true
@@ -95,7 +95,7 @@ testpaths = [
 
 [tool.coverage.run]
 branch = true
-source = ["src/hatchlor_demo"]
+source = ["src/python_hatch_project"]
 omit = [
     "_version.py",  # automatically created by hatch-vcs, not in repo
 ]
@@ -185,7 +185,7 @@ unfixable = [
 quote-style = "single" # be more like black
 
 [tool.ruff.isort]
-known-first-party = ["hatchlor_demo"]
+known-first-party = ["python_hatch_project"]
 
 [tool.ruff.flake8-quotes]
 inline-quotes = "single"
@@ -204,63 +204,51 @@ ban-relative-imports = "all"
 # Environment Setup #
 #####################
 
-[tool.hatch.env]
-requires = ["hatch-pip-compile~=1.2"]
-
-# Default environment with production dependencies
+# Default environment, i.e. development dependencies
 [tool.hatch.envs.default]
-python = "3.10"
-path = ".direnv"  # to have VSCode support
-post-install-commands = ["pre-commit install"]
-type = "pip-compile"
-pip-compile-constraint = "default"  # keep locks between default & others consistent
-lock-filename = "locks/{env_name}.lock"
-pip-compile-hashes = true
-dependencies = []
-[tool.hatch.envs.default.scripts]
-upgrade-all = "PIP_COMPILE_UPGRADE=1 hatch env run --env {env_name} -- python --version"
-upgrade-pkg = "PIP_COMPILE_UPGRADE='{args}' hatch env run --env {env_name} -- python --version"
-
-# Test environment, i.e. development dependencies
-[tool.hatch.envs.test]
 dependencies = [ # ToDo: Modify according to your needs!
+    "hatch",
+    "hatch-vcs", # to make `hatch version` available
     "coverage[toml]>=6.2",
     "pytest",
     "pytest-cov",
     "pytest-mock",
     "pytest-vcr",
-    "pytest-sugar",
     "hypothesis",
+    "jupyterlab",
+    "pre-commit",
     "mypy",
     "ruff"
 ]
-[tool.hatch.envs.test.scripts]
-cov = "pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=src/hatchlor_demo --cov=tests {args}"
+[tool.hatch.envs.default.scripts]
+cov = "pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=src/python_hatch_project --cov=tests {args}"
 no-cov = "cov --no-cov {args}"
 debug =  "cov --no-cov -s --pdb --pdbcls=IPython.core.debugger:Pdb {args}"
 
 # Docs environment
 [tool.hatch.envs.docs]
 dependencies = [
-    "mkdocs~=1.5",
-    "mkdocs-material~=9.4",
+    "mkdocs~=1.4.0",
+    "mkdocs-material~=8.5.6",
     # Plugins
     "mkdocs-include-markdown-plugin",
     "mkdocs-gen-files",
     "mkdocs-literate-nav",
-    "mkdocs-minify-plugin~=0.5",
+    "mkdocs-minify-plugin~=0.5.0",
     "mkdocs-section-index",
-    "mkdocs-git-revision-date-localized-plugin~=1.1",
+    "mkdocs-git-revision-date-localized-plugin~=1.1.0",
     "mkdocstrings[python]",
-    "mkdocs-redirects~=1.2",
+    "mkdocs-redirects~=1.1.0",
     "mkdocs-glightbox~=0.3.0",
-    "mike~=2.0.0",
+    # https://github.com/jimporter/mike/issues/82#issuecomment-1172913929
+    "mike @ https://github.com/jimporter/mike/archive/392d57b8bb9d14bcedf2451a0dc302709f8055eb.zip",
     # Extensions
-    "pymdown-extensions~=10.5",
+    "pymdown-extensions~=9.6.0",
     # Necessary for syntax highlighting in code blocks
-    "pygments~=2.13",
+    "pygments~=2.13.0",
     # Validation
-    "linkchecker~=10.3",
+    # https://github.com/linkchecker/linkchecker/pull/669#issuecomment-1267236287
+    "linkchecker @ git+https://github.com/linkchecker/linkchecker.git@d9265bb71c2054bf57b8c5734a4825d62505c779",
     ]
 [tool.hatch.envs.docs.env-vars]
 SOURCE_DATE_EPOCH = "1580601600"
@@ -282,8 +270,8 @@ build-check = [
 [tool.hatch.envs.lint]
 skip-install = true
 dependencies = [
-    "mypy~=1.7",
-    "ruff~=0.1.6",
+    "mypy~=1.6",
+    "ruff==0.1.4",
 ]
 [tool.hatch.envs.lint.scripts]
 typing = [
@@ -305,7 +293,6 @@ all = [
     "typing",
 ]
 
-# Test matrix for various Python versions replacing the functionality of tox
-[[tool.hatch.envs.py-test.matrix]]
-template = ["test"]
+# Test matrix replacing the functionality of tox
+[[tool.hatch.envs.test.matrix]]
 python = ["310", "311", "312"]

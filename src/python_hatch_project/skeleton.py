@@ -4,7 +4,7 @@ console script. This is accomplished via the following lines in `pyproject.toml`
 
 ```toml
 [project.scripts]
-fibonacci = "hatchlor_demo.skeleton:app"
+fibonacci = "python_hatch_project.skeleton:app"
 ```
 
 Then run `hatch run fibonacci 10` to execute this in your default environment or
@@ -25,7 +25,7 @@ from typing import Annotated
 
 import typer
 
-from hatchlor_demo import __version__
+from python_hatch_project import __version__
 
 _logger = logging.getLogger(__name__)
 
@@ -57,8 +57,8 @@ def setup_logging(log_level: LogLevel):
 
 
 app = typer.Typer(
-    name=f'Hatchlor demo project {__version__}',
-    help='Python project featuring the Python project manager hatch powerd by the Hatchlor.',
+    name=f'Python hatch project {__version__}',
+    help='Python project featuring the modern and extensible Python project manager hatch.',
 )
 
 

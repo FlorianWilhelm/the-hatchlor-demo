@@ -1,6 +1,6 @@
 import pytest
 
-from hatchlor_demo.skeleton import app, fib
+from python_hatch_project.skeleton import app, fib
 
 
 def test_fib():

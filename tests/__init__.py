@@ -1,1 +1,1 @@
-"""Unit test package for hatchlor-demo."""
+"""Unit test package for python-hatch-project."""

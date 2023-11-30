@@ -1,6 +1,6 @@
 # Contributing
 
-Welcome to the contributor guide of Hatchlor demo project.
+Welcome to the contributor guide of Python hatch project.
 
 This document focuses on getting any potential contributor familiarized with
 the development processes, but [other kinds of contributions] are also appreciated.
@@ -16,7 +16,7 @@ behavior guidelines.
 
 ## Issue Reports
 
-If you experience bugs or general issues with Hatchlor demo project, please have a look
+If you experience bugs or general issues with Python hatch project, please have a look
 on the [issue tracker].
 If you don't see anything useful there, please feel free to fire an issue report.
 
@@ -33,7 +33,7 @@ you help us to identify the root cause of the issue.
 
 ## Documentation improvements
 
-You can help improve the documentation of Hatchlor demo project by making them more readable
+You can help improve the documentation of Python hatch project by making them more readable
 and coherent, or by adding missing information and correcting mistakes.
 
 This documentation uses [mkdocs] as its main documentation compiler.
@@ -75,8 +75,8 @@ This often provides additional considerations and avoids unnecessary work.
 3. Clone this copy to your local disk:
 
    ```console
-   git clone git@github.com:YourLogin/hatchlor-demo.git
-   cd hatchlor-demo
+   git clone git@github.com:YourLogin/python-hatch-project.git
+   cd python-hatch-project
    ```
 
 4. Make sure [hatch] is installed using [pipx]:

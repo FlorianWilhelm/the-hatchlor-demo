@@ -1,3 +1,3 @@
 # Contributors
 
-* [Harro Hatchlor](https://github.com/hatchlor)
+* [Florian Wilhelm](https://github.com/FlorianWilhelm)
