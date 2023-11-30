@@ -13,7 +13,8 @@ Python project featuring the Python project manager hatch powerd by the Hatchlor
 To set up [hatch] and [pre-commit] for the first time:
 
 1. install [hatch] globally, e.g. with [pipx], i.e. `pipx install hatch`,
-2. optionally run `hatch config set dirs.env.virtual .direnv` to let [VS Code] find your virtual environments,
+2. optionally run `hatch config set dirs.env.virtual .direnv` and `hatch config set dirs.env.virtual .direnv`
+   to let [VS Code] find your virtual environments,
 3. make sure `pre-commit` is installed globally, e.g. with `pipx install pre-commit`,
 
 A special feature that makes hatch very different from other familiar tools is that you almost never
@@ -30,6 +31,10 @@ problems with `hatch run lint:fix` and use `hatch run docs:serve` to build and s
 You can also easily define your own environments and commands. Check out the environment setup of hatch
 in [pyproject.toml](pyproject.toml) for more commands as well as the package, build and tool configuration.
 
+The environments defined by hatch are configured to generate lock files using [hatch-pip-compile] under `locks`.
+To upgrade all packages in an environment like `test`, just run `hatch run test:upgrade-all`. To upgrade specific
+packages, type `hatch run test:upgrade-pkg pkg1,pkg2`.
+
 ## Credits
 
 This package was created with [The Hatchlor] project template.
@@ -39,3 +44,4 @@ This package was created with [The Hatchlor] project template.
 [hatch]: https://hatch.pypa.io/
 [pre-commit]: https://pre-commit.com/
 [VS Code]: https://code.visualstudio.com/docs/python/environments#_where-the-extension-looks-for-environments
+[hatch-pip-compile]: https://github.com/juftin/hatch-pip-compile

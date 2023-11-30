@@ -204,11 +204,21 @@ ban-relative-imports = "all"
 # Environment Setup #
 #####################
 
+[tool.hatch.env]
+requires = ["hatch-pip-compile~=1.2"]
+
 # Default environment with production dependencies
 [tool.hatch.envs.default]
 python = "3.10"
 post-install-commands = ["pre-commit install"]
+type = "pip-compile"
+pip-compile-constraint = "default"  # keep locks between default & others consistent
+lock-filename = "locks/{env_name}.lock"
+pip-compile-hashes = true
 dependencies = []
+[tool.hatch.envs.default.scripts]
+upgrade-all = "PIP_COMPILE_UPGRADE=1 hatch env run --env {env_name} -- python --version"
+upgrade-pkg = "PIP_COMPILE_UPGRADE='{args}' hatch env run --env {env_name} -- python --version"
 
 # Test environment with test-only dependencies
 [tool.hatch.envs.test]
