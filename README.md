@@ -13,7 +13,7 @@ Python project featuring the Python project manager hatch powerd by the Hatchlor
 To set up [hatch] and [pre-commit] for the first time:
 
 1. install [hatch] globally, e.g. with [pipx], i.e. `pipx install hatch`,
-2. optionally run `hatch config set dirs.env.virtual .direnv` and `hatch config set dirs.env.virtual .direnv`
+2. optionally run `hatch config set dirs.env.virtual .direnv` and `hatch config set dirs.env.pip-compile .direnv`
    to let [VS Code] find your virtual environments,
 3. make sure `pre-commit` is installed globally, e.g. with `pipx install pre-commit`,
 
