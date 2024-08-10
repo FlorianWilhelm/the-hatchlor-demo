@@ -37,4 +37,3 @@ This package was created with [The Hatchlor] project template.
 [pipx]: https://pypa.github.io/pipx/
 [hatch]: https://hatch.pypa.io/
 [pre-commit]: https://pre-commit.com/
-[VS Code]: https://code.visualstudio.com/docs/python/environments#_where-the-extension-looks-for-environments
